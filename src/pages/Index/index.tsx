@@ -4,9 +4,12 @@ import { useHistory } from 'react-router';
 
 const Index = () => {
   const history = useHistory();
+
   const launchNewGame = () => {
-    history.push('/home');
+    // TODO do some magick with user state
+    history.push('/locations');
   };
+
   return (
     <div>
       <button onClick={launchNewGame}>New Game</button>
