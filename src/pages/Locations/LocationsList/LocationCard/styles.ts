@@ -1,15 +1,20 @@
 import { createUseStyles } from 'react-jss';
+import { Theme } from 'Theme';
+import { LocationCardProps } from './interfaces';
 
-export default createUseStyles({
+export default createUseStyles((theme: Theme) => ({
   wrapper: {
     position: 'relative',
-    padding: 5,
     margin: 10,
     boxShadow: `0 0 10px rgba(0,0,0,0.1)`,
     border: `1px solid #eee`,
     borderRadius: 10,
     height: 480,
     minWidth: 320,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'contain',
+    background: (props: LocationCardProps) =>
+      `url(${theme.locations[props.type]})`,
     '&:hover': {
       border: `1px solid #ccc`,
       cursor: 'pointer',
@@ -17,8 +22,15 @@ export default createUseStyles({
     },
   },
   title: {
+    marginTop: 5,
     display: 'flex',
     justifyContent: 'center',
+    '& span': {
+      background: 'rgba(255,255,255,0.7)',
+      borderRadius: 2,
+      minWidth: '30%',
+      padding: '2px 8px',
+    },
   },
   energyCost: {
     background: 'red',
@@ -29,8 +41,9 @@ export default createUseStyles({
     display: 'flex',
     textAlign: 'center',
     right: 5,
+    top: 5,
     width: 20,
     height: 25,
     justifyContent: 'center',
   },
-});
+}));
