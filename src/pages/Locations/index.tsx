@@ -43,7 +43,7 @@ const Locations = () => {
 
   const openLocationButtonText = canOpenLocation
     ? `Open new location - ${locations.length}`
-    : `You reached the limit of locations`;
+    : `You've reached the limit of locations`;
 
   return (
     <div>
@@ -54,7 +54,9 @@ const Locations = () => {
       <button disabled={!canOpenLocation} type="button" onClick={openLocation}>
         {openLocationButtonText}
       </button>
-      <LocationsList locations={locations} />
+      <div className={classes.locations}>
+        <LocationsList locations={locations} />
+      </div>
     </div>
   );
 };

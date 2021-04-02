@@ -9,11 +9,11 @@ export default createUseStyles((theme: Theme) => ({
     boxShadow: `0 0 10px rgba(0,0,0,0.1)`,
     border: `1px solid #eee`,
     borderRadius: 10,
-    height: 480,
-    minWidth: 320,
+    height: 320,
+    minWidth: 220,
     backgroundRepeat: 'no-repeat',
-    backgroundSize: 'contain',
-    background: (props: LocationCardProps) =>
+    backgroundSize: 'cover',
+    backgroundImage: (props: LocationCardProps) =>
       `url(${theme.locations[props.type]})`,
     '&:hover': {
       border: `1px solid #ccc`,
@@ -26,14 +26,15 @@ export default createUseStyles((theme: Theme) => ({
     display: 'flex',
     justifyContent: 'center',
     '& span': {
-      background: 'rgba(255,255,255,0.7)',
+      color: 'white',
+      background: 'rgba(0,200,100,0.7)',
       borderRadius: 2,
       minWidth: '30%',
       padding: '2px 8px',
     },
   },
   energyCost: {
-    background: 'red',
+    background: 'rgba(250,0,0,0.9)',
     color: 'white',
     padding: `0px 3px`,
     borderRadius: '50%',
