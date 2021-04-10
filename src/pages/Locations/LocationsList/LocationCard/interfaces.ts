@@ -1,8 +1,8 @@
-import { LocationType } from 'pages/Locations/interfaces';
+import { CardLocationType } from 'store/reducers/interfaces';
 
 export interface LocationCardProps {
   title: string;
   id: number;
   energyCost: number;
-  type: LocationType;
+  type: CardLocationType;
 }

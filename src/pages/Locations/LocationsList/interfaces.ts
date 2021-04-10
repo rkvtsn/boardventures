@@ -1,5 +1,5 @@
-import { Location } from '../interfaces';
+import { CardLocation } from 'store/reducers/interfaces';
 
 export interface LocationsListProps {
-  locations: Location[];
+  locations: CardLocation[];
 }
